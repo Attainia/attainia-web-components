@@ -4,5 +4,6 @@
 *.log
 /build/
 /dist/
+/coverage/
 .storybook-build/
 .DS_Store

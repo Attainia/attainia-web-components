@@ -1,9 +1,15 @@
 # Attainia Web Components
 
+![Build Status](https://api.travis-ci.org/Attainia/attainia-web-components.svg?branch=development)
+
 This repository contains modularized JavaScript and CSS meant to be used in an Attainia web application (built using the React.js framework).
 
 ## Installing
 
+```bash
+yarn add attainia-web-components
+```
+or
 ```bash
 npm install attainia-web-components
 ```
@@ -18,7 +24,11 @@ Using React Storybook, we can develop and design UI components outside of an app
 You can run the Storybooks using the following command:
 
 ```bash
-npm run storybook
+yarn start
+```
+
+```bash
+npm start
 ```
 
 You can access your storybook from the browser at http://localhost:9001
