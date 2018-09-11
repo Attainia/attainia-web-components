@@ -10,17 +10,16 @@
     "storybook": "NODE_PATH=src start-storybook -p 9001 -c .storybook",
     "build-storybook": "NODE_PATH=src build-storybook -c .storybook -o .storybook-build",
     "build-dev": "react-scripts build",
-    "prebuild": "npm run clean",
+    "prebuild": "yarn clean",
     "build": "BABEL_ENV=production babel src/ --out-dir dist --ignore node_modules/,**/__mocks__/,**/*.test.js,**/*.story.js --copy-files",
     "clean": "node_modules/.bin/rimraf build dist",
     "copy-manifest": "node_modules/.bin/copyfiles package.json .npmrc dist/",
     "predist": "yarn build && yarn copy-manifest",
     "dist": "cd dist && npm publish",
     "precommit-validate": "hooks/lint_js || (echo 'Please fix any of the above-mentioned linting errors before finalizing this commit.' && exit 1)",
-    "eject": "react-scripts eject",
     "lint": "node_modules/.bin/eslint \"src/**/*.js\"",
-    "start": "react-scripts start",
-    "test": "exit 0"
+    "start": "NODE_PATH=src start-storybook -p 9001 -c .storybook",
+    "test": "./node_modules/.bin/jest"
   },
   "pre-commit": {
     "run": [
@@ -53,12 +52,11 @@
     "Usha <usha.kundapur@attainia.com>"
   ],
   "dependencies": {
+    "enzyme-adapter-react-16": "^1.5.0"
   },
   "peerDependencies": {
     "carbon-components": "^9.10.1",
     "carbon-components-react": "^6.28.1",
-    "typeface-roboto": "^0.0.54",
-    "typeface-roboto-condensed": "^0.0.54",
     "carbon-icons": "^7.0.7",
     "classnames": "^2.2.6",
     "formik": "1.x",
@@ -67,7 +65,9 @@
     "prop-types": "15.x",
     "react": "16.x",
     "react-dom": "16.x",
-    "react-table": "6.x"
+    "react-table": "6.x",
+    "typeface-roboto": "^0.0.54",
+    "typeface-roboto-condensed": "^0.0.54"
   },
   "devDependencies": {
     "@storybook/addon-actions": "3.2.15",
@@ -97,6 +97,7 @@
     "classnames": "^2.2.6",
     "copyfiles": "1.2.0",
     "css-loader": "^1.0.0",
+    "enzyme": "^3.6.0",
     "eslint": "4.11.0",
     "eslint-config-airbnb": "15.1.0",
     "eslint-config-prettier": "2.6.0",
@@ -109,6 +110,7 @@
     "glob-all": "3.1.0",
     "history": "4.7.2",
     "invariant": "^2.2.4",
+    "jest": "^23.6.0",
     "lodash": "4.x.x",
     "node-sass": "^4.9.3",
     "pre-commit": "1.2.2",
@@ -122,9 +124,9 @@
     "rimraf": "2.6.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
-    "url-loader": "^1.1.1",
     "typeface-roboto": "^0.0.54",
-    "typeface-roboto-condensed": "^0.0.54"
+    "typeface-roboto-condensed": "^0.0.54",
+    "url-loader": "^1.1.1"
   },
   "prettier": {
     "bracketSpacing": false,
@@ -135,5 +137,8 @@
     "tabWidth": 4,
     "trailingComma": "none",
     "useTabs": false
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./src/setupTests.js"
   }
 }
