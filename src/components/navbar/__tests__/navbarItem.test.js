@@ -9,7 +9,7 @@ const defaultProps = {
     onClick: () => {}
 }
 const consoleSpy = fakeConsole()
-describe('Navbar', () => {
+describe('NavbarItem', () => {
     it('should render', () => {
         const wrapper = mount(
             <NavbarItem

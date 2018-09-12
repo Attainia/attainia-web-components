@@ -1,7 +1,2 @@
-import * as button from './button'
-import * as navbar from './navbar'
-
-export default {
-    button,
-    navbar
-}
+export * from './button'
+export * from './navbar'

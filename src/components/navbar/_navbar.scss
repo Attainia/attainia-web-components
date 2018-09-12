@@ -1,63 +1,62 @@
-.menu {
-    list-style: none;
-    width: 100%;
-    padding: 0;
-  }
+@import '../../scss/colors';
 
-  .menu li {
+.menu {
+  list-style: none;
+  width: 100%;
+  padding: 0;
+  li {
     display: block;
     float:left;
     margin:-1px -1px 0 0;
-  }
-
-  .menu li button {
-    display:block;
-    text-decoration:none;
-    font-size: 11px;
-    text-align: center;
-    font-family: "Roboto";
-    color: #1c2a33;
-    background-color: #f4f7fb;
-    width:100px;
-    height: 22px;
-    line-height: 22px;
-    border: none;
-    &:hover {
-      background-color: #aedee9;
-      text-decoration: none;
+    &:hover > ul {
+      opacity: 1;
+    };
+    &:not(:first-of-type) button {
+      border-left: 1px solid $ui-3;
     }
-    &:active, &:focus {
-        background-color: #1d80a7;
-        color: #FFFFFF;
+    & > ul {
+      left: -9999px;
+      opacity: 0;
+      -webkit-transiton: opacity 0.3s;
+      -moz-transition: opacity 0.3s;
+      -ms-transition: opacity 0.3s;
+      -o-transition: opacity 0.3s;
+      transition: opacity 0.3s;
+      & > li {
+        float: unset;
+        button {
+          border-right: 1px solid $ui-3;
+          text-align: unset;
+          padding: 0 10px;
+          &:last-of-type {
+            border-bottom: 1px solid $ui-3;
+          }
+        }
+      }
     }
-  }
-
-  .menu li:not(:first-of-type) button {
-    border-left: 1px solid #cdd1d4;
-  }
-
-  .menu li > ul {
-    left: -9999px;
-    opacity: 0;
-    -webkit-transiton: opacity 0.3s;
-    -moz-transition: opacity 0.3s;
-    -ms-transition: opacity 0.3s;
-    -o-transition: opacity 0.3s;
-    transition: opacity 0.3s;
-  }
-
-  .menu li > ul > li {
-    float: unset;
     button {
-      border-right: 1px solid #cdd1d4;
-      text-align: unset;
-      padding: 0 10px;
-      &:last-of-type {
-        border-bottom: 1px solid #cdd1d4;
+      display:block;
+      text-decoration:none;
+      font-size: 11px;
+      text-align: center;
+      font-family: "Roboto";
+      color: $ui-6;
+      background-color: $ui-1;
+      width:100px;
+      height: 22px;
+      line-height: 22px;
+      border: none;
+      &:hover {
+        background-color: $blue-02;
+        text-decoration: none;
+      }
+      &:active, &:focus {
+          background-color: $blue-01;
+          color: $white;
+          outline: 0;
+          -webkit-box-shadow: none;
+                  box-shadow: none;
       }
     }
   }
-
-  .menu li:hover > ul {
-    opacity: 1;
-  };
+}
