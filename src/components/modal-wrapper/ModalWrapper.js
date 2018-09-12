@@ -60,10 +60,16 @@ export default class ModalWrapper extends React.Component {
         }
     }
 
+    handleOnKeyDown = evt => {
+        if (evt.which === 27) {
+            this.handleClose()
+            this.props.onKeyDown(evt)
+        }
+    }
+
     render() {
         const {
             children,
-            onKeyDown,
             buttonTriggerText,
             buttonTriggerClassName,
             triggerButtonKind,
@@ -83,12 +89,7 @@ export default class ModalWrapper extends React.Component {
         return (
             <div
                 role="presentation"
-                onKeyDown={evt => {
-                    if (evt.which === 27) {
-                        this.handleClose()
-                        onKeyDown(evt)
-                    }
-                }}
+                onKeyDown={this.handleOnKeyDown}
             >
                 <Button
                     className={buttonTriggerClassName}
