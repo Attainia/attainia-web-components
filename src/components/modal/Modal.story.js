@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import {storiesOf} from '@storybook/react'
 import {action} from '@storybook/addon-actions'
 import {withInfo} from '@storybook/addon-info'
@@ -40,6 +40,26 @@ storiesOf('Modal', module)
                 <p className="bx--modal-content__text">
                     Please see ModalWrapper for more examples and demo of the functionality.
                 </p>
+            </Modal>
+        ))
+    )
+    .add(
+        'Without Heading',
+        withInfo({
+            text: `
+        Modals communicate information via a secondary window and
+        allow the user to maintain the context of a particular task.
+        Use the Modal Wrapper component to encapsulate your Modal within a button.
+      `
+        })(() => (
+            <Modal {...props()} secondaryButtonText="Cancel" primaryButtonText="Delete Room" modalHeading={undefined}>
+                <Fragment>
+                    <h3 className="bx--type-strong">Delete Room in Project</h3>
+                    <br />
+                    <p className="bx--modal-content__text">
+                        Please see ModalWrapper for more examples and demo of the functionality.
+                    </p>
+                </Fragment>
             </Modal>
         ))
     )
