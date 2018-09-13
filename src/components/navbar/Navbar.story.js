@@ -34,7 +34,7 @@ const navbarItems = [
                 url: '#'
             },
             {
-                text: 'Recomendations',
+                text: 'Recommendations',
                 url: '#'
             }
         ]
