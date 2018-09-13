@@ -2,6 +2,7 @@
 @import '../../scss/typography';
 
 .menu {
+  display: flex;
   list-style: none;
   width: 100%;
   padding: 0;
@@ -9,8 +10,9 @@
     white-space: nowrap;
   }
   li {
-    display: block;
-    float:left;
+    flex: 1;
+    /* display: block;
+    float:left; */
     margin:-1px -1px 0 0;
     &:hover > ul {
       opacity: 1;
