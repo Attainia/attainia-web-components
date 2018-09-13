@@ -2,6 +2,7 @@
   "name": "attainia-web-components",
   "version": "2.2.1",
   "description": "A collection of Attainia branded web components to be used in an Attainia React.js web application.",
+  "homepage": "https://attainia.github.io/attainia-web-components",
   "main": "index.js",
   "engines": {
     "node": ">= 8.0.0"
@@ -16,6 +17,8 @@
     "copy-manifest": "node_modules/.bin/copyfiles package.json .npmrc dist/",
     "predist": "yarn build && yarn copy-manifest",
     "dist": "cd dist && npm publish",
+    "predeploy": "yarn build-storybook",
+    "deploy": "gh-pages -d .storybook-build",
     "precommit-validate": "hooks/lint_js || (echo 'Please fix any of the above-mentioned linting errors before finalizing this commit.' && exit 1)",
     "lint": "node_modules/.bin/eslint \"src/**/*.js\"",
     "start": "NODE_PATH=src start-storybook -p 9001 -c .storybook",
@@ -52,7 +55,8 @@
     "Usha <usha.kundapur@attainia.com>"
   ],
   "dependencies": {
-    "enzyme-adapter-react-16": "^1.5.0"
+    "enzyme-adapter-react-16": "^1.5.0",
+    "gh-pages": "^1.2.0"
   },
   "peerDependencies": {
     "carbon-components": "^9.10.1",

@@ -14,14 +14,9 @@ or
 npm install attainia-web-components
 ```
 
-## Component Storybooks
+## [Component Storybooks Website](https://attainia.github.io/attainia-web-components/)
 
-Using React Storybook, we can develop and design UI components outside of an application in an isolated environment.  For more information about Storybooks, see the links below.
-
-[Storybook Site](https://storybook.js.org/)
-[Storybook GitHub](https://github.com/storybooks/storybook)
-
-You can run the Storybooks using the following command:
+You can run the Storybooks locally using the following command:
 
 ```bash
 yarn start
