@@ -17,6 +17,7 @@
       opacity: 1;
       display: inline-flex;
       flex-direction: column;
+      z-index: 9999;
     };
     &:not(:first-of-type) button {
       border-left: 1px solid $ui-3;
