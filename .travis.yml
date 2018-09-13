@@ -6,7 +6,7 @@ install:
   "yarn"
 build:
   "yarn build"
-pre-deploy:
+pre_deploy:
   - "yarn build"
 deploy:
   provider: npm
