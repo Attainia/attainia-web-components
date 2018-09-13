@@ -6,6 +6,9 @@ install:
   "yarn"
 build:
   "yarn build"
+pre-deploy:
+  - "yarn test"
+  - "yarn build"
 deploy:
   provider: npm
   email: $NPM_EMAIL
