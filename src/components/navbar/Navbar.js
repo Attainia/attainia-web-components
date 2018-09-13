@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 
-class Navbar extends PureComponent {
+export class Navbar extends PureComponent {
     render() {
         const {
             items
