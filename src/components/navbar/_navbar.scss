@@ -2,19 +2,21 @@
 @import '../../scss/typography';
 
 .menu {
+  display: flex;
   list-style: none;
   width: 100%;
   padding: 0;
+  justify-content: flex-start;
+  background-color: $ui-1;
   ul {
     white-space: nowrap;
   }
   li {
-    display: block;
-    float:left;
     margin:-1px -1px 0 0;
     &:hover > ul {
       opacity: 1;
-      display: block;
+      display: inline-flex;
+      flex-direction: column;
     };
     &:not(:first-of-type) button {
       border-left: 1px solid $ui-3;
@@ -28,8 +30,8 @@
       -o-transition: opacity 0.3s;
       transition: opacity 0.3s;
       position: absolute;
+      background-color: transparent;
       & > li {
-        float: unset;
         button {
           border-right: 1px solid $ui-3;
           text-align: unset;
@@ -66,3 +68,19 @@
     }
   }
 }
+
+@media all and (max-width: 600px) {
+  .menu {
+    flex-wrap: wrap;
+    & > li {
+      flex-basis: 50%;
+    }
+  }
+}
+
+@media all and (max-width: 400px) {
+  .menu > li {
+      flex-basis: 100%;
+  }
+}
+
