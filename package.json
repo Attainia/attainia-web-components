@@ -55,8 +55,7 @@
     "Usha <usha.kundapur@attainia.com>"
   ],
   "dependencies": {
-    "enzyme-adapter-react-16": "^1.5.0",
-    "gh-pages": "^1.2.0"
+    "enzyme-adapter-react-16": "^1.5.0"
   },
   "peerDependencies": {
     "carbon-components": "^9.10.1",
@@ -74,6 +73,7 @@
     "typeface-roboto-condensed": "^0.0.54"
   },
   "devDependencies": {
+    "gh-pages": "^1.2.0",
     "@storybook/addon-actions": "3.2.15",
     "@storybook/addon-info": "3.2.13",
     "@storybook/addon-knobs": "3.2.15",
