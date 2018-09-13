@@ -7,18 +7,22 @@
   width: 100%;
   padding: 0;
   justify-content: flex-start;
+  background-color: $ui-1;
   ul {
     white-space: nowrap;
   }
   li {
-    flex: 1;
-    /* display: block;
-    float:left; */
-    margin:-1px -1px 0 0;
-    &:hover > ul {
+    flex: 0 0;
+    margin:0 0;
+    &:hover > ul.menu {
+      background-color: transparent;
       opacity: 1;
       display: block;
+      position: absolute;
     };
+    &:last-of-type {
+        border-right: 1px solid $ui-3;
+    }
     &:not(:first-of-type) button {
       border-left: 1px solid $ui-3;
     }

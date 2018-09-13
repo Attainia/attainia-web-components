@@ -99,7 +99,7 @@ storiesOf('Navbar', module).add(
     })(() => {
         const regularProps = props.regular()
         return (
-            <div style={{ width: '100%' }}>
+            <div style={{ minWidth: '650px', width: '100%' }}>
                 <Navbar {...regularProps} className="some-class" />
                 &nbsp;
             </div>
