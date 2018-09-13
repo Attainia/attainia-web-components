@@ -7,10 +7,12 @@ build:
   "yarn build"
 before_deploy:
   - "yarn build"
+  - "yarn copy-manifest"
 deploy:
   provider: npm
   email: $NPM_EMAIL
   api_key: $NPM_TOKEN
   skip_cleanup: true
+  file: "dist/**/*"
   on:
     tags: true
