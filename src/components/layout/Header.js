@@ -49,6 +49,9 @@ const ListHeader = styled.header`
     @supports (display: grid) {
         display: grid;
         grid-area: pageheader;
+        position: sticky;
+        top: 0;
+        z-index: 9999;
         align-items: center;
         align-content: start;
         justify-items: center;
