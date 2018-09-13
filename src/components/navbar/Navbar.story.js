@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
-import Navbar from './Navbar'
-import NavbarItem from './NavbarItem'
+import {Navbar} from './Navbar'
+import {NavbarItem} from './NavbarItem'
 
 const navbarItems = [
     {

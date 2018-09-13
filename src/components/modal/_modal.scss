@@ -64,12 +64,12 @@
     @media (min-width: 600px) {
       height: auto;
       min-width: 500px;
-      max-width: 75%;
+      max-width: 90%;
       max-height: 90%;
     }
 
     @media (min-width: 1024px) {
-      max-width: 50%;
+      max-width: 70%;
       max-height: 80%;
     }
   }
@@ -94,12 +94,14 @@
   .#{$prefix}--modal-content {
     color: $ui-6;
     padding: $spacing-xl 6% $spacing-xl 6%;
+    overflow-y: scroll;
     &__text {
       @include typescale('zeta');
     }
   }
 
   .#{$prefix}--modal-footer {
+    min-height: 70px;
     margin-top: auto;
     display: flex;
     justify-content: center;
