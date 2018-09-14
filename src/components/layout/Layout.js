@@ -19,7 +19,7 @@ class Layout extends PureComponent {
         return (
             <Page isCollapsed={propsToggle ? this.props.isCollapsed : this.state.isCollapsed}>
                 <Header {...restOfProps} />
-                <div style={{ gridArea: 'sidebar' }}>
+                <div style={{ gridArea: 'sidebar', position: 'sticky', top: 50, zIndex: 9999 }}>
                     {renderNavBar(restOfProps)}
                 </div>
                 <Main {...restOfProps}>{children}</Main>

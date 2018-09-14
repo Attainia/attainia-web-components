@@ -67,9 +67,7 @@ const SubLi = styled(Li)`
 `
 const NavUl = styled(Ul)`
     grid-area: sidebar;
-    position: sticky;
-    top: 50px;
-    z-index: 9999;
+    background-color: ${pathOr('black', ['theme', 'colors', 'grayscale', 'black'])};
     @media ${pathOr('screen and (min-width: 600px)', ['theme', 'breakpoints', 'tablet'])} {
         top: 0;
         position: sticky;
