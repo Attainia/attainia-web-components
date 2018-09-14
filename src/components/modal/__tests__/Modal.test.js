@@ -94,7 +94,22 @@ describe('Modal', () => {
         })
 
         it('should set state to open when trigger button is clicked', () => {
-            const wrapper = mount(<ModalWrapper />)
+            const wrapper = mount(<ModalWrapper buttonTriggerText={'Things'} />)
+            const triggerBtn = wrapper.children().childAt(0)
+            expect(wrapper.state('isOpen')).not.toEqual(true)
+            triggerBtn.simulate('click')
+            expect(wrapper.state('isOpen')).toEqual(true)
+        })
+        it('should set state to open when renderModalTrigger is clicked', () => {
+            const wrapper = mount(
+                <ModalWrapper
+                    renderModalTrigger={onClick => (
+                        <a href="#trigger" onClick={onClick}>
+                            Launch Me
+                        </a>
+                    )}
+                />
+            )
             const triggerBtn = wrapper.children().childAt(0)
             expect(wrapper.state('isOpen')).not.toEqual(true)
             triggerBtn.simulate('click')
@@ -202,7 +217,7 @@ describe('Modal', () => {
 })
 describe('Modal Wrapper', () => {
     describe('Renders as expected', () => {
-        const wrapper = mount(<ModalWrapper />)
+        const wrapper = mount(<ModalWrapper buttonTriggerText="Things" />)
 
         it('should default to primary button', () => {
             expect(wrapper.find('.bx--btn--primary').length).toEqual(2)
@@ -222,6 +237,17 @@ describe('Modal Wrapper', () => {
             wrapper.setProps({triggerButtonKind: 'secondary'})
             expect(wrapper.find('.bx--btn--secondary').length).toEqual(2)
         })
+        it('should render renderModalTrigger contents when passed', () => {
+            wrapper.setProps({
+                renderModalTrigger: onClick => (
+                    <a href="#trigger" onClick={onClick}>
+                        Launch Me
+                    </a>
+                ),
+                buttonTriggerText: null
+            })
+            expect(wrapper.find('a[href="#trigger"]')).toHaveLength(1)
+        })
         it('should handleClose on handleSubmit', () => {
             wrapper.setProps({shouldCloseAfterSubmit: true, handleSubmit: () => true})
             wrapper.setState({isOpen: true})
@@ -233,7 +259,10 @@ describe('Modal Wrapper', () => {
         it('should call prop onKeyDown with handleOnKeyDown when esc is called', () => {
             const onKeyDownFake = jest.fn()
             wrapper.setProps({onKeyDown: onKeyDownFake()})
-            wrapper.find('[role="presentation"]').at(0).simulate('keydown', {which: 27})
+            wrapper
+                .find('[role="presentation"]')
+                .at(0)
+                .simulate('keydown', {which: 27})
             expect(onKeyDownFake).toHaveBeenCalled()
         })
     })
