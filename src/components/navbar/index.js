@@ -1,2 +1,2 @@
-export * from './Navbar'
-export * from './NavbarItem'
+export {default as Navbar} from './Navbar'
+export {default as NavbarItem} from './NavbarItem'

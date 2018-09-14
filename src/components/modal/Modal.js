@@ -45,7 +45,7 @@ export default class Modal extends Component {
         modalHeading: null,
         modalLabel: '',
         selectorsFloatingMenus: ['.bx--overflow-menu-options', '.bx--tooltip', '.flatpickr-calendar'],
-        selectorPrimaryFocus: '[data-modal-primary-focus]'
+        selectorPrimaryFocus: ''
     }
 
     componentDidUpdate(prevProps) {
