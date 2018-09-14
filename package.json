@@ -1,6 +1,6 @@
 {
   "name": "attainia-web-components",
-  "version": "2.2.11",
+  "version": "2.2.12",
   "description": "A collection of Attainia branded web components to be used in an Attainia React.js web application.",
   "homepage": "https://attainia.github.io/attainia-web-components",
   "main": "index.js",

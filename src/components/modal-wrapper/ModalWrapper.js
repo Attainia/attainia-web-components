@@ -23,6 +23,7 @@ export default class ModalWrapper extends React.Component {
         onKeyDown: PropTypes.func,
         disabled: PropTypes.bool,
         triggerButtonKind: PropTypes.oneOf(['primary', 'secondary', 'danger', 'ghost', 'danger--primary', 'tertiary']),
+        renderModalTrigger: PropTypes.func,
         shouldCloseAfterSubmit: PropTypes.bool
     }
 
@@ -31,7 +32,9 @@ export default class ModalWrapper extends React.Component {
         secondaryButtonText: 'Cancel',
         triggerButtonKind: 'primary',
         disabled: false,
-        onKeyDown: () => {}
+        onKeyDown: () => {},
+        renderModalTrigger: null,
+        buttonTriggerText: null
     }
 
     state = {
@@ -76,6 +79,7 @@ export default class ModalWrapper extends React.Component {
             disabled,
             handleSubmit, // eslint-disable-line no-unused-vars
             shouldCloseAfterSubmit, // eslint-disable-line no-unused-vars
+            renderModalTrigger,
             ...other
         } = this.props
 
@@ -87,18 +91,19 @@ export default class ModalWrapper extends React.Component {
         }
 
         return (
-            <div
-                role="presentation"
-                onKeyDown={this.handleOnKeyDown}
-            >
-                <Button
-                    className={buttonTriggerClassName}
-                    disabled={disabled}
-                    kind={triggerButtonKind}
-                    onClick={this.handleOpen}
-                >
-                    {buttonTriggerText}
-                </Button>
+            <div role="presentation" onKeyDown={this.handleOnKeyDown}>
+                {buttonTriggerText && (
+                    <Button
+                        className={buttonTriggerClassName}
+                        disabled={disabled}
+                        kind={triggerButtonKind}
+                        onClick={this.handleOpen}
+                    >
+                        {buttonTriggerText}
+                    </Button>
+                )}
+                {renderModalTrigger &&
+                    renderModalTrigger(this.handleOpen, buttonTriggerClassName, disabled, triggerButtonKind)}
                 <Modal {...props}>{children}</Modal>
             </div>
         )
