@@ -27,6 +27,7 @@ export default styled.div`
                 'sidebar'
                 'main'
                 'footer';
+                grid-template-rows: 50px 22px auto 72px;
         }
     }
 `
