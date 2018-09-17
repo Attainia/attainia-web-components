@@ -21,10 +21,10 @@ storiesOf('Checkbox', module)
         'Checked',
         withInfo({
             text: `
-        Checkboxes are used when there is a list of options and the user may select multiple options, including all or none.
-        The example below shows how the Checkbox component can be used as an uncontrolled component that is initially checked
-        by setting the defaultChecked property to true. To use the component in a controlled way, you should set the
-        checked property instead.
+        Checkboxes are used when there is a list of options and the user may select multiple options, including all
+        or none. The example below shows how the Checkbox component can be used as an uncontrolled component that is
+        initially checked by setting the defaultChecked property to true. To use the component in a controlled way,
+        you should set the checked property instead.
       `
         })(() => {
             const checkboxProps = props()
@@ -41,9 +41,9 @@ storiesOf('Checkbox', module)
         'Unchecked',
         withInfo({
             text: `
-        Checkboxes are used when there is a list of options and the user may select multiple options, including all or none.
-        The example below shows how the Checkbox component can be used as an uncontrolled component that is initially
-        unchecked. To use the component in a controlled way, you should set the checked property instead.
+        Checkboxes are used when there is a list of options and the user may select multiple options, including all
+        or none. The example below shows how the Checkbox component can be used as an uncontrolled component that is
+        initially unchecked. To use the component in a controlled way, you should set the checked property instead.
       `
         })(() => {
             const checkboxProps = props()
