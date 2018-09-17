@@ -20,6 +20,6 @@ deploy:
   - provider: pages
     skip-cleanup: true
     github-token: $GITHUB_PAGES_TOKEN
-    local-dir: "../.storybook-build"
+    local-dir: ".storybook-build"
     on:
       branch: development
