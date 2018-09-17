@@ -8,11 +8,18 @@ build:
 before_deploy:
   - "yarn build"
   - "yarn copy-manifest"
+  - "yarn build-storybook"
   - "cd dist"
 deploy:
-  provider: npm
-  email: $NPM_EMAIL
-  api_key: $NPM_TOKEN
-  skip_cleanup: true
-  on:
-    tags: true
+  - provider: npm
+    email: $NPM_EMAIL
+    api_key: $NPM_TOKEN
+    skip_cleanup: true
+    on:
+      tags: true
+  - provider: pages
+    skip-cleanup: true
+    github-token: $GITHUB_PAGES_TOKEN
+    local-dir: "../.storybook-build"
+    on:
+      branch: development
