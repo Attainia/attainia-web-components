@@ -3,9 +3,8 @@ node_js:
   - 8
 install:
   "yarn"
-build:
-  "yarn build"
 before_deploy:
+  - "yarn"
   - "yarn build"
   - "yarn copy-manifest"
   - "yarn build-storybook"
