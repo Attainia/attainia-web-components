@@ -23,3 +23,8 @@ deploy:
     local-dir: ".storybook-build"
     on:
       branch: development
+  - provider: surge
+    skip-cleanup: true
+    project: "./.storybook-build"
+    on:
+      all_branches: true
