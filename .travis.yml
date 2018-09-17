@@ -6,6 +6,7 @@ install:
   - "yarn"
 script:
   - cd $TRAVIS_BUILD_DIR
+  - "yarn test"
   - "yarn build"
   - "yarn copy-manifest"
   - "yarn build-storybook"
