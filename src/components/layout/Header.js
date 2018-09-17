@@ -41,7 +41,7 @@ const ListHeader = styled.header`
     }
     .logoutLink {
         grid-area: logoutlink;
-        display: block;
+        display: inline-block;
         color: ${pathOr('mediumgray', ['theme', 'colors', 'misc', 'gray', 'spanishGray'])};
         text-decoration: none;
     }
@@ -58,13 +58,13 @@ const ListHeader = styled.header`
         grid-row-gap: 0;
         grid-template-rows: 48px 2px;
         @media ${pathOr('screen and (max-width: 599px)', ['theme', 'breakpoints', 'phone'])} {
-            grid-template-columns: 20px 112px 1fr 25px 6em;
+            grid-template-columns: 20px 112px 1fr 25px auto;
             grid-template-areas:
                 ". headerlogo statusmessage notificationicon logoutlink"
                 "pbar pbar pbar pbar pbar";
         }
         @media ${pathOr('screen and (min-width: 600px)', ['theme', 'breakpoints', 'tablet'])} {
-            grid-template-columns: 50px 112px 1fr 25px 8em;
+            grid-template-columns: 50px 112px 1fr 25px auto;
             grid-template-areas:
                 ". headerlogo statusmessage notificationicon logoutlink"
                 "pbar pbar pbar pbar pbar";
