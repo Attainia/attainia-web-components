@@ -4,9 +4,13 @@ node_js:
 install:
   - cd $TRAVIS_BUILD_DIR
   - "yarn"
+script:
+  - cd $TRAVIS_BUILD_DIR
   - "yarn build"
   - "yarn copy-manifest"
   - "yarn build-storybook"
+before_deploy:
+  - cd $TRAVIS_BUILD_DIR
   - "cd dist"
 deploy:
   - provider: npm
