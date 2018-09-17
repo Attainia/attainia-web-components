@@ -3,9 +3,8 @@ node_js:
   - 8
 install:
   "yarn"
-build:
-  "yarn build"
 before_deploy:
+  - cd $TRAVIS_BUILD_DIR
   - "yarn build"
   - "yarn copy-manifest"
   - "yarn build-storybook"
@@ -25,6 +24,7 @@ deploy:
       branch: development
   - provider: surge
     skip-cleanup: true
-    project: "./.storybook-build"
+    project: ./.storybook-build
+    domain: awc-$TRAVIS_COMMIT.surge.sh
     on:
       all_branches: true
