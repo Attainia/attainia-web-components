@@ -25,6 +25,6 @@ deploy:
   - provider: surge
     skip-cleanup: true
     project: ./.storybook-build
-    domain: "pr-%{TRAVIS_PULL_REQUEST}-awc.surge.sh"
+    domain: awc-$TRAVIS_COMMIT.surge.sh
     on:
       all_branches: true
