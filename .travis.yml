@@ -4,7 +4,7 @@ node_js:
 install:
   "yarn"
 before_deploy:
-  - "yarn"
+  - cd $TRAVIS_BUILD_DIR
   - "yarn build"
   - "yarn copy-manifest"
   - "yarn build-storybook"
@@ -24,6 +24,6 @@ deploy:
       branch: development
   - provider: surge
     skip-cleanup: true
-    project: "./.storybook-build"
+    project: ./.storybook-build
     on:
       all_branches: true
