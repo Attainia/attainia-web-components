@@ -2,9 +2,8 @@ language: node_js
 node_js:
   - 8
 install:
-  "yarn"
-before_deploy:
   - cd $TRAVIS_BUILD_DIR
+  - "yarn"
   - "yarn build"
   - "yarn copy-manifest"
   - "yarn build-storybook"
