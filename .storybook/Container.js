@@ -16,8 +16,6 @@ export default class Container extends PureComponent {
                     role="main"
                     style={{
                         padding: '3em',
-                        display: 'flex',
-                        flexDirection: 'column',
                         alignItems: 'center'
                     }}
                 >

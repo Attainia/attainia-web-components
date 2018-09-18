@@ -1,0 +1,54 @@
+@import '../../scss/colors';
+@import '../../scss/typography';
+
+@include exports('drawer') {
+  .#{$prefix}--drawer {
+    @include reset;
+    @include font-family;
+
+    width: 100%;
+
+  }
+  .#{$prefix}--drawer__header {
+    background-color: $blue-01;
+    color: $white;
+    font-weight: bold;
+    padding: 0.7em 1em;
+    border-radius: 10px 10px 0 0;
+    display: grid;
+    grid-template-areas: 'status label';
+    grid-template-columns: 2em auto;
+  }
+  .#{$prefix}--drawer__header--icon {
+    grid-area: status;
+    border-style: solid;
+    border-width: 0.15em 0.15em 0 0;
+    height: 0.5em;
+    width: 0.5em;
+    transition: transform 0.2s;
+  }
+  .#{$prefix}--drawer__header--icon__open {
+    transform: rotate(135deg);
+    margin-top: 0.1em;
+  }
+  .#{$prefix}--drawer__header--icon__close {
+    transform: rotate(45deg);
+    margin-top: 0.2em;
+  }
+
+  .#{$prefix}--drawer__header--label {
+    grid-area: label;
+  }
+
+  .#{$prefix}--drawer__content {
+    overflow: hidden;
+  }
+
+  .#{$prefix}--drawer__content__open {
+    height: auto;
+  }
+  
+  .#{$prefix}--drawer__content__close {
+    height: 0;
+  }
+}
